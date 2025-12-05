@@ -362,7 +362,7 @@ if __name__ == "__main__":
             loop.run_until_complete(main())
     else:
         # 일반 파이썬 실행
-        asyncio.run(main())
+        articles=asyncio.run(main())
 
 
 # 1. API 키 및 설정 (환경변수에서 가져오도록 설정 - 보안 필수!)
@@ -484,5 +484,6 @@ for article in articles:
     
     # 3) 텔레그램 전송
     send_telegram_message(TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, message)
+
 
 print("모든 작업이 완료되었습니다.")
