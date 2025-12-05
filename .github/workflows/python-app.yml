@@ -1,0 +1,30 @@
+name: telegrameconbot
+
+on:
+  schedule:
+    - cron: '0,30 * * * *'
+  workflow_dispatch: # 수동 실행 버튼 (테스트용)
+
+jobs:
+  run-news-bot:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+        
+    - name: req
+      run: |
+        pip install -r requirements.txt
+        
+    - name: exe
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        python main.py
