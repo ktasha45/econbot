@@ -20,6 +20,7 @@ jobs:
     - name: req
       run: |
         pip install -r requirements.txt
+        cache: 'pip'
         
     - name: exe
       env:
