@@ -45,6 +45,17 @@ async def main():
         all_results_grouped = await asyncio.gather(*tasks)
 
     flat_news_list = [news for group in all_results_grouped for news in group]
+
+    # 수집된 기사 목록 내에서 링크를 기준으로 중복 제거
+    print(f"\n- 중복 제거 전 기사 수: {len(flat_news_list)}")
+    unique_articles = {}
+    for article in flat_news_list:
+        link = article.get('link')
+        if link and link not in unique_articles:
+            unique_articles[link] = article
+    flat_news_list = list(unique_articles.values())
+    print(f"- 중복 제거 후 기사 수: {len(flat_news_list)}")
+    
     flat_news_list.sort(key=lambda x: x['published_at'], reverse=True)
 
     end_time = time.time()
