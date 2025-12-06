@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # 수집할 시간 범위 (시간 단위)
-TIME_LIMIT_HOURS = 0.5
+TIME_LIMIT_HOURS = 2
 
 # 한국 시간(KST) 정의
 KST = timezone(timedelta(hours=9))
