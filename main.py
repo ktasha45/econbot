@@ -44,10 +44,25 @@ async def main():
 
         all_results_grouped = await asyncio.gather(*tasks)
 
+    # 각 소스별 기사 수 집계
+    source_counts = {}
+    for group in all_results_grouped:
+        if group:
+            source_name = group[0]['source']
+            if source_name not in source_counts:
+                source_counts[source_name] = 0
+            source_counts[source_name] += len(group)
+
     flat_news_list = [news for group in all_results_grouped for news in group]
 
     # 수집된 기사 목록 내에서 링크를 기준으로 중복 제거
     print(f"\n- 중복 제거 전 기사 수: {len(flat_news_list)}")
+    # 소스별 기사 수 출력
+    if source_counts:
+        print("- 소스별 수집 기사 수:")
+        for source, count in sorted(source_counts.items()):
+            print(f"  - {source}: {count}개")
+            
     unique_articles = {}
     for article in flat_news_list:
         link = article.get('link')
