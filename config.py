@@ -24,11 +24,11 @@ RSS_FEEDS = [
     {"name": "한경-부동산", "url": "https://www.hankyung.com/feed/realestate"},
     {"name": "한경-국제", "url": "https://www.hankyung.com/feed/international"},
     {"name": "한경-오피니언", "url": "https://www.hankyung.com/feed/opinion"},
-    {"name": "매경-경제", "url": "https://www.mk.co.kr/rss/30100041/"},
-    {"name": "매경-국제", "url": "https://www.mk.co.kr/rss/30300018/"},
-    {"name": "매경-기업경영", "url": "https://www.mk.co.kr/rss/50100032/"},
-    {"name": "매경-증권", "url": "https://www.mk.co.kr/rss/50200011/"},
-    {"name": "매경-부동산", "url": "https://www.mk.co.kr/rss/50300009/"},
+    # {"name": "매경-경제", "url": "https://www.mk.co.kr/rss/30100041/"},
+    # {"name": "매경-국제", "url": "https://www.mk.co.kr/rss/30300018/"},
+    # {"name": "매경-기업경영", "url": "https://www.mk.co.kr/rss/50100032/"},
+    # {"name": "매경-증권", "url": "https://www.mk.co.kr/rss/50200011/"},
+    # {"name": "매경-부동산", "url": "https://www.mk.co.kr/rss/50300009/"},
 ]
 
 # API 키 및 설정
